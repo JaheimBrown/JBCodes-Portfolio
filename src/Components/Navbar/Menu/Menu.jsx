@@ -1,0 +1,169 @@
+import React from "react";
+import styled from "styled-components";
+import exit from "../../../Assets/Icons/MenuExit.svg";
+import { HiMail } from "react-icons/hi";
+import { AiFillGithub } from "react-icons/ai";
+import { FaCodepen } from "react-icons/fa";
+import { AiFillLinkedin } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
+
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.body};
+  padding: 32px 16px;
+  text-align: center;
+  position: Absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+
+  .menu-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  margin-top: 64px;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    padding: 16px 24px;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      background-color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.linkHover};
+    }
+  }
+`;
+
+const Button = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.linkHover};
+  border-radius: 8px;
+  padding: 16px 24px;
+  width: 100%;
+  box-shadow: 0px 1px 3px 1px #00000026;
+  box-shadow: 0px 1px 2px 0px #0000004d;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.bgSecondary};
+    color: ${({ theme }) => theme.body};
+  }
+`;
+
+const Socials = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 32px;
+
+  a {
+    font-size: 22px;
+    color: ${({ theme }) => theme.body};
+    padding: 8px 16px;
+    transition: all 0.2s ease-in-out;
+
+    &:nth-child(1) {
+      &:hover {
+        color: #da0d95;
+      }
+    }
+
+    &:nth-child(2) {
+      border-left: 3px solid ${({ theme }) => theme.border};
+      border-right: 3px solid ${({ theme }) => theme.border};
+      &:hover {
+        color: #be2a2a;
+      }
+    }
+    &:nth-child(3) {
+      border-right: 3px solid ${({ theme }) => theme.border};
+      &:hover {
+        color: #bcdb0d;
+      }
+    }
+    &:nth-child(4) {
+      &:hover {
+        color: ${({ theme }) => theme.primary};
+      }
+    }
+
+    &:hover {
+      transform: scale(1.16);
+    }
+  }
+`;
+
+const LinkItems = styled.div`
+  position: fixed;
+  height: auto;
+  padding: 32px 16px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+`;
+
+const Menu = ({ show, toggleMenu }) => {
+  console.log(show);
+
+  return (
+    <Container className={show && "show-menu"}>
+      <IoMdClose className="menu-close" onClick={toggleMenu} size={40} />
+      <Grid>
+        <a className="body-large mt-s" href="#">
+          Home
+        </a>
+        <a className="body-large mt-s" href="#">
+          About
+        </a>
+        <a className="body-large mt-s" href="#">
+          Projects
+        </a>
+      </Grid>
+      <LinkItems>
+        <Button className="body-large " href="#">
+          Get In Touch
+        </Button>
+        <Socials className="mt-m">
+          <a href="#">
+            <HiMail />
+          </a>
+          <a href="#">
+            <AiFillGithub />
+          </a>
+          <a href="#">
+            <FaCodepen />
+          </a>
+          <a href="#">
+            <AiFillLinkedin />
+          </a>
+        </Socials>
+      </LinkItems>
+    </Container>
+  );
+};
+
+export default Menu;
