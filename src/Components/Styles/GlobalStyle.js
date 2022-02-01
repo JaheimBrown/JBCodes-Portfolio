@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
   *,*::before,*::after{
     margin: 0;
@@ -10,7 +9,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
+    background-color: ${({ theme }) => theme.background};
   }
 
   /* TYPOGRAPHY */
@@ -19,32 +19,38 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: bold;
   }
 
-  h1{
+  .display-sm{
+    font-size: 3.125rem;
+    line-height: 60px;
+    font-weight: bold;
+  }
+
+  .h1{
     font-size: 3.583rem;
     font-weight: bold;
   }
 
-  h2{
+  .h2{
     font-size: 2.986rem;
     font-weight: bold;
   }
 
-  h3{
+  .h3{
     font-size: 2.488rem;
     font-weight: bold;
   }
 
-  h4{
+  .h4{
     font-size: 2.074rem;
     font-weight: bold;
   }
 
-  h5{
+  .h5{
     font-size: 1.728rem;
     font-weight: bold;
   }
 
-  h6{
+  .h6{
     font-size: 1.44rem;
     font-weight: bold;
   }
@@ -56,6 +62,7 @@ export const GlobalStyles = createGlobalStyle`
   p{
     font-size: 1rem;
     font-weight: normal;
+    line-height: 24px;
   }
 
   .body-small{
@@ -71,6 +78,18 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 32px;
   }
 
+  .mt-l{
+    margin-top: 64px;
+  }
+
+  .mb-s{
+    margin-bottom: 16px;
+  }
+
+  .mb-m{
+    margin-bottom: 32px;
+  }
+
   /* BUTTONS */
   .btn{
     background-color: ${({ theme }) => theme.primary};
@@ -79,8 +98,62 @@ export const GlobalStyles = createGlobalStyle`
     box-shadow: 0px 1px 2px 0px #0000004D;
   }
 
+  .primary-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.btnText};
+    border: 1px solid ${({ theme }) => theme.border};
+    padding: 16px 24px;
+    min-width: 100px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px #00000026;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    .icon,.icon2{margin-left: 4px;}
+
+    .icon2{display: none;}
+
+    &:hover{
+      background-color: #fff;
+      color: #000;
+      .icon{display: none;}
+      .icon2{display: inline-block;}
+    }
+  }
+
+  .outline-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    color: ${({ theme }) => theme.body};
+    border: 1px solid ${({ theme }) => theme.border};
+    padding: 16px 24px;
+    min-width: 100px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+      background-color: ${({ theme }) => theme.btnText};
+      color: #000;
+      box-shadow: 0px 1px 3px 1px #00000026;
+      box-shadow: 0px 1px 2px 0px #0000004d;
+    }
+  }
+
   /* ACTIVE CLASSES */
   .show-menu{
     transform: translateY(0%);
+  }
+  .scoll-cta{
+    background-color: crimson;
+    fill: crimson;
   }
 `;

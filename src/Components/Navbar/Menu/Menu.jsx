@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import exit from "../../../Assets/Icons/MenuExit.svg";
 import { HiMail } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
 import { FaCodepen } from "react-icons/fa";
@@ -10,12 +8,12 @@ import { IoMdClose } from "react-icons/io";
 const Container = styled.div`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.body};
-  padding: 32px 16px;
+  padding: 32px 32px 32px 16px;
   text-align: center;
-  position: Absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
@@ -39,7 +37,7 @@ const Grid = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: ${({ theme }) => theme.body};
     text-decoration: none;
     padding: 16px 24px;
     border-radius: 4px;
@@ -77,7 +75,6 @@ const Socials = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   padding: 16px 32px;
 
   a {
@@ -120,15 +117,13 @@ const Socials = styled.div`
 const LinkItems = styled.div`
   position: fixed;
   height: auto;
-  padding: 32px 16px;
+  padding: 32px 32px 32px 16px;
   bottom: 0;
   left: 0;
   width: 100%;
 `;
 
 const Menu = ({ show, toggleMenu }) => {
-  console.log(show);
-
   return (
     <Container className={show && "show-menu"}>
       <IoMdClose className="menu-close" onClick={toggleMenu} size={40} />
