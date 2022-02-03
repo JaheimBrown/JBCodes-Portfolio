@@ -2,12 +2,14 @@
 export const lightMode = {
   primary: "#2114BA",
   background: "#fff",
-  bgSecondary: "#EBEBEB",
+  bgSecondary: "#E4E4E4",
   border: "rgba(189, 189, 189, 0.6)",
   body: "#000",
   btnText: "#fff",
   input: "#DCDCDC",
   linkHover: "#fff",
+  textOnImg: "#fff",
+  borderOnImg: "rgba(189, 189, 189, 0.6)",
 };
 
 export const darkMode = {
@@ -19,4 +21,6 @@ export const darkMode = {
   border: "#2A2A3B",
   input: "#202028",
   linkHover: "#fff",
+  textOnImg: "#fff",
+  borderOnImg: "rgba(189, 189, 189, 0.6)",
 };

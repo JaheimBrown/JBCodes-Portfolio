@@ -71,7 +71,7 @@ const Button = styled.a`
   }
 `;
 
-const Socials = styled.div`
+export const Socials = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,8 @@ const Socials = styled.div`
     transition: all 0.2s ease-in-out;
 
     &:nth-child(1) {
-      &:hover {
+      &:hover,
+      &:focus {
         color: #da0d95;
       }
     }
@@ -92,23 +93,27 @@ const Socials = styled.div`
     &:nth-child(2) {
       border-left: 3px solid ${({ theme }) => theme.border};
       border-right: 3px solid ${({ theme }) => theme.border};
-      &:hover {
+      &:hover,
+      &:focus {
         color: #be2a2a;
       }
     }
     &:nth-child(3) {
       border-right: 3px solid ${({ theme }) => theme.border};
-      &:hover {
+      &:hover,
+      &:focus {
         color: #bcdb0d;
       }
     }
     &:nth-child(4) {
-      &:hover {
+      &:hover,
+      &:focus {
         color: ${({ theme }) => theme.primary};
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       transform: scale(1.16);
     }
   }

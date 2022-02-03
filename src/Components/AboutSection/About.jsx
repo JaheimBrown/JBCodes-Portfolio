@@ -7,7 +7,7 @@ import Icons from "../../Assets/Icons/Icons.svg";
 
 const Container = styled.section`
   min-height: 100vh;
-  padding: 44px 1rem 44px;
+  padding: 44px 1rem 4rem;
   background-color: ${({ theme }) => theme.background};
   border-top: 1px solid ${({ theme }) => theme.border};
 
@@ -114,6 +114,10 @@ const Container = styled.section`
         padding: 16px 0 16px 16px;
         gap: 2rem;
         border-bottom: 1px dotted ${({ theme }) => theme.border};
+
+        li {
+          color: ${({ theme }) => theme.body};
+        }
       }
     }
   }
@@ -138,9 +142,9 @@ const About = () => {
             </span>
           </p>
           <div className="links mt-l">
-            <a href="#" className="outline-btn">
+            <button href="#" className="outline-btn">
               Download Resume
-            </a>
+            </button>
             <img src={Icons} />
           </div>
         </div>
@@ -148,26 +152,26 @@ const About = () => {
           <span className="top body-large">
             <span>&#60;</span>Technologies<span>&#62;</span>
           </span>
-          <p>
-            Languages
+          <span>
+            <p>Languages</p>
             <ul>
               <li className="body-small">HTML</li>
               <li className="body-small">CSS</li>
               <li className="body-small">Javascript ES6</li>
             </ul>
-          </p>
+          </span>
 
-          <p>
-            Libraries
+          <span>
+            <p>Libraries</p>
             <ul>
               <li className="body-small">React</li>
               <li className="body-small">React-Redux</li>
               <li className="body-small">Styled-Components</li>
             </ul>
-          </p>
+          </span>
 
-          <p>
-            Tools
+          <span>
+            <p>Tools</p>
             <ul>
               <li className="body-small">GIT</li>
               <li className="body-small">NPM</li>
@@ -175,7 +179,7 @@ const About = () => {
               <li className="body-small">Figma</li>
               <li className="body-small">Notion</li>
             </ul>
-          </p>
+          </span>
 
           <span className="bottom body-large">
             <span>&#60;/</span>Technologies<span>&#62;</span>

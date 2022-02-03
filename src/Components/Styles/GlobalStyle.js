@@ -118,7 +118,7 @@ export const GlobalStyles = createGlobalStyle`
 
     .icon2{display: none;}
 
-    &:hover{
+    &:hover, &:focus{
       background-color: #fff;
       color: #000;
       .icon{display: none;}
@@ -130,7 +130,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: none;
+    background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.body};
     border: 1px solid ${({ theme }) => theme.border};
     padding: 16px 24px;
@@ -140,11 +140,69 @@ export const GlobalStyles = createGlobalStyle`
     transition: 0.3s ease-in-out;
     cursor: pointer;
 
-    &:hover{
+    &:hover, &:focus{
       background-color: ${({ theme }) => theme.btnText};
       color: #000;
       box-shadow: 0px 1px 3px 1px #00000026;
       box-shadow: 0px 1px 2px 0px #0000004d;
+    }
+  }
+
+  .primary-btn-sml{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.btnText};
+    border: 1px solid ${({ theme }) => theme.border};
+    padding: 12px 24px;
+    min-width: 100px;
+    gap: 8px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px #00000026;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    .icon,.icon2{margin-left: 4px;}
+
+    .icon2{display: none;}
+
+    &:hover, &:focus{
+      background-color: #fff;
+      color: #000;
+      .icon{display: none;}
+      .icon2{display: inline-block;}
+    }
+  }
+
+  .source-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.border};
+    color: ${({ theme }) => theme.primary};
+    border: 1px solid ${({ theme }) => theme.border};
+    padding: 12px 24px 12px 16px;
+    min-width: 100px;
+    gap: 8px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px #00000026;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    .icon,.icon2{margin-left: 4px;}
+
+    .icon2{display: none;}
+
+    &:hover, &:focus{
+      background-color: #fff;
+      color: #000;
+      .icon{display: none;}
+      .icon2{display: inline-block;}
     }
   }
 

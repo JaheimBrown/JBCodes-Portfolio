@@ -12,6 +12,9 @@ import animationData2 from "../src/Assets/Animations/scrollAnimation-dark.json";
 import Navbar from "./Components/Navbar";
 import HeroSection from "./Components/HeroSection";
 import About from "./Components/AboutSection";
+import Projects from "./Components/Projects/Projects";
+import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
 
 function App() {
   // STATES
@@ -31,6 +34,9 @@ function App() {
         <Navbar toggleTheme={toggleTheme} />
         <HeroSection animationData={Data} />
         <About />
+        <Projects />
+        <Contact />
+        <Footer />
       </>
     </ThemeProvider>
   );
