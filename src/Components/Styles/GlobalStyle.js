@@ -11,18 +11,23 @@ export const GlobalStyles = createGlobalStyle`
   body{
     font-family: 'Poppins', sans-serif; 
     background-color: ${({ theme }) => theme.background};
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    width: 100%;
   }
 
   /* TYPOGRAPHY */
-  .display{
-    font-size: 4.3rem;
-    font-weight: bold;
-  }
-
-  .display-sm{
-    font-size: 3.125rem;
-    line-height: 60px;
-    font-weight: bold;
+  .display {
+    font-size: clamp(43.81px,5vw,3.8rem);
+    line-height: 54px;
+    font-weight: bold;  
   }
 
   .h1{
@@ -177,6 +182,28 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .outline-btn-sml{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.body};
+    border: 1px solid ${({ theme }) => theme.border};
+    padding: 12px 24px;
+    min-width: 100px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover, &:focus{
+      background-color: ${({ theme }) => theme.btnText};
+      color: #000;
+      box-shadow: 0px 1px 3px 1px #00000026;
+      box-shadow: 0px 1px 2px 0px #0000004d;
+    }
+  }
+
   .source-btn{
     display: flex;
     justify-content: center;
@@ -204,6 +231,37 @@ export const GlobalStyles = createGlobalStyle`
       .icon{display: none;}
       .icon2{display: inline-block;}
     }
+  }
+
+  .nav-btn{
+    display: none;
+  @media screen and  (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.btnText};
+    border: 1px solid ${({ theme }) => theme.border};
+    padding: 16px 24px;
+    min-width: 100px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px #00000026;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    .icon,.icon2{margin-left: 4px;}
+
+    .icon2{display: none;}
+
+    &:hover, &:focus{
+      background-color: #fff;
+      color: #000;
+      .icon{display: none;}
+      .icon2{display: inline-block;}
+    }
+  }
   }
 
   /* ACTIVE CLASSES */

@@ -12,10 +12,10 @@ const Container = styled.span`
   display: inline-block;
   span {
     display: inline-block;
+    color: ${({ theme }) => theme.primary};
     opacity: 0;
     animation-name: ${animation};
     animation-duration: 6s;
-    animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -38,14 +38,13 @@ const Container = styled.span`
     animation-delay: 0.6s;
   }
   span:nth-child(7) {
-    animation-delay: 0.6s;
+    animation-delay: 0.7s;
   }
 `;
 
 const TextAnimation = () => {
   const wordArray = "Design".split("");
   const wordArray2 = "Develop".split("");
-  const wordArray3 = "Deploy".split("");
   const [word, setWord] = useState(wordArray);
   const [count, setCount] = useState(1);
 
@@ -55,9 +54,6 @@ const TextAnimation = () => {
       setCount(count + 1);
     } else if (count === 2) {
       setWord(wordArray2);
-      setCount(count + 1);
-    } else if (count === 3) {
-      setWord(wordArray3);
       setCount(1);
     }
   };

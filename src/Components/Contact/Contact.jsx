@@ -48,7 +48,7 @@ const Container = styled.section`
       bottom: 0;
       right: 0;
       pointer-events: none;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 1;
     }
   }
@@ -67,7 +67,6 @@ const Container = styled.section`
         justify-content: space-between;
         align-items: center;
         span {
-          /* color: ${({ theme }) => theme.body}; */
           color: #979797;
         }
       }
@@ -95,6 +94,50 @@ const Container = styled.section`
       textarea {
         height: 100px;
       }
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    max-width: 900px;
+    margin: 0 auto 3em auto;
+    padding-inline: 2em;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 1200px;
+    margin: 0 auto 3em auto;
+
+    .grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 1em;
+      border-radius: 12px;
+      margin-top: 2em;
+      border: 1px solid ${({ theme }) => theme.border};
+    }
+
+    .contact-info {
+      grid-column: 1/2;
+      text-align: left;
+      margin-top: 0;
+      padding: 2em;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      p {
+        margin-block: 1em;
+      }
+
+      .links {
+        justify-content: flex-start;
+        padding-left: unset;
+        color: ${({ theme }) => theme.body};
+      }
+    }
+    form {
+      grid-column: 2/3;
+      width: 100%;
+      padding: 2em 1em;
     }
   }
 `;
@@ -151,53 +194,55 @@ const Contact = ({ ...Data }) => {
   return (
     <Container>
       <h2 className="h2">Get In Touch</h2>
-      <div className="contact-info">
-        <h6 className="h6 ">Contact Information</h6>
-        <p className="mt-s">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          voluptatum maxime in perspiciatis quae ab quod.
-        </p>
-        <Links>
-          <a href="#">
-            <HiMail />
-          </a>
-          <a href="#">
-            <AiFillGithub />
-          </a>
-          <a href="#">
-            <FaCodepen />
-          </a>
-          <a href="#">
-            <AiFillLinkedin />
-          </a>
-        </Links>
-      </div>
-      <form action="#">
-        <div className="field">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" />
+      <div className="grid">
+        <div className="contact-info">
+          <h3 className="h4 ">Contact Information</h3>
+          <p className="mt-s">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            voluptatum maxime in perspiciatis quae ab quod.
+          </p>
+          <Links className="links">
+            <a href="#">
+              <HiMail />
+            </a>
+            <a href="#">
+              <AiFillGithub />
+            </a>
+            <a href="#">
+              <FaCodepen />
+            </a>
+            <a href="#">
+              <AiFillLinkedin />
+            </a>
+          </Links>
         </div>
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div className="field">
-          <div className="flex">
-            <label htmlFor="subject">Subject</label>
-            <span className="body-small">(Optional)</span>
+        <form action="#">
+          <div className="field">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
           </div>
-          <input type="text" name="subject" id="subject" />
-        </div>
-        <div className="field">
-          <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" />
-        </div>
-        <div className="btn-container">
-          <button href="#" className="primary-btn ">
-            Submit
-          </button>
-        </div>
-      </form>
+          <div className="field">
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div className="field">
+            <div className="flex">
+              <label htmlFor="subject">Subject</label>
+              <span className="body-small">(Optional)</span>
+            </div>
+            <input type="text" name="subject" id="subject" />
+          </div>
+          <div className="field">
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" />
+          </div>
+          <div className="btn-container">
+            <button href="#" className="primary-btn ">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </Container>
   );
 };

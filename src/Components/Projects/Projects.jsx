@@ -8,9 +8,11 @@ import projects from "./Data";
 // STYLES
 const Container = styled.section`
   padding: 44px 1rem 2rem;
-  background-color: ${({ theme }) => theme.bgSecondary};
+  background-color: ${({ theme }) => theme.background};
   border-top: 1px solid ${({ theme }) => theme.border};
   min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 
   h2 {
     text-align: center;
@@ -26,6 +28,10 @@ const Container = styled.section`
       left: 50%;
       transform: translateX(-50%);
     }
+  }
+
+  @media screen and (min-width: 500px) {
+    padding-inline: 2em;
   }
 `;
 
