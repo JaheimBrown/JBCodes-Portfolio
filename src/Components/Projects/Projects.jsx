@@ -41,7 +41,7 @@ const Header = styled.h2``;
 
 const Projects = () => {
   return (
-    <Container>
+    <Container id="portfolio">
       <h2 className="h2 mb-s">My Work</h2>
       {projects.map((item, index) => {
         return <Card key={item.id} item={item} />;

@@ -1,46 +1,78 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import TextAnimation from "../Animations/TextAnimation";
 import Lottie from "react-lottie";
-import heroImage from "../../Assets/Images/HeroImage.png";
+import lottie from "lottie-web";
+import { Link as LinkS } from "react-scroll";
+import HeroAni from "../../Assets/Animations/hero/phone.json";
 
 // ICONS
 import { AiOutlineRight, AiOutlineArrowRight } from "react-icons/ai";
 
 const HeroSection = ({ animationData }) => {
+  const container = useRef(null);
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData,
+    renderer: "svg",
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
 
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      loop: true,
+      autoplay: true,
+      animationData: HeroAni,
+    });
+
+    lottie.setSpeed(0.5);
+  }, []);
+
   return (
     <>
-      <Wrapper>
-        <img src={heroImage} className="hero-image" />
+      <Wrapper id="home">
+        <div className="container" ref={container}></div>
         <div className="info">
           <h2 className="mb-s">
             <TextAnimation /> Cutting Edge Web Applications.
           </h2>
           <p className="leading  mb-s">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo,
-            reprehenderit eaque veniam eius hic sint nisi sit sunt.
+            I'm Jaheim Brown a Front End Developer based in Jamaica. I design
+            and develop websites and web applications with a focus on responsive
+            design.
           </p>
           <div className="btn-container">
-            <a href="#" className="primary-btn">
+            <ScrollBtn
+              to="portfolio"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={true}
+              offset={-70}
+              className="primary-btn"
+            >
               View Projects <AiOutlineRight className="icon" />{" "}
               <AiOutlineArrowRight className="icon2" />
-            </a>
-            <a href="#" className="outline-btn">
+            </ScrollBtn>
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1B1wXmKfJWndJjuLrx6lIjEb26AjriA02/view"
+              className="outline-btn"
+            >
               Download Resume
             </a>
           </div>
         </div>
         <div className="scroll">
-          <Lottie options={defaultOptions}></Lottie>
+          <Lottie
+            options={defaultOptions}
+            style={{ width: "4rem", marginLeft: "6px" }}
+          ></Lottie>
         </div>
       </Wrapper>
     </>
@@ -48,6 +80,10 @@ const HeroSection = ({ animationData }) => {
 };
 
 // STYLES
+const ScrollBtn = styled(LinkS)`
+  cursor: pointer;
+`;
+
 const Wrapper = styled.section`
   position: relative;
   height: 100vh;
@@ -55,12 +91,13 @@ const Wrapper = styled.section`
   margin: 0 auto;
   padding: 3em 1em 0 1em;
 
-  .hero-image {
+  .container {
     display: none;
   }
 
   .info {
     margin-top: 5em;
+
     h2 {
       font-size: 2.986rem;
       color: ${({ theme }) => theme.title};
@@ -88,6 +125,19 @@ const Wrapper = styled.section`
     padding-inline: 3em;
     padding-top: 6em;
 
+    .container {
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 60%;
+      width: 35%;
+    }
+
+    .info {
+      margin-top: 0;
+    }
+
     h2,
     p {
       text-align: center;
@@ -108,7 +158,23 @@ const Wrapper = styled.section`
   }
 
   @media screen and (min-width: 820px) {
+    .container {
+      transform: none;
+      -webkit-tranform: none;
+      left: auto;
+      top: 8em;
+      right: -4em;
+      width: 50%;
+    }
+
     .info {
+      margin-top: 4em;
+      width: 65% !important;
+
+      h2 {
+        font-size: 3.583rem;
+      }
+
       h2,
       p {
         text-align: left;
@@ -122,29 +188,26 @@ const Wrapper = styled.section`
     .info {
       width: 50%;
     }
-
-    .hero-image {
-      display: unset;
-      position: absolute;
-      top: 6em;
-      right: 0;
-      width: 40%;
-      max-width: 30em;
-      object-fit: cover;
-    }
   }
 
   @media screen and (min-width: 1024px) {
+    .container {
+      top: 4.5em;
+      right: -5em;
+    }
     .info {
-      margin-top: 3em;
+      margin-top: 4em;
+      width: 60% !important;
 
       h2 {
-        font-size: 3.583rem;
+        font-size: 4.3rem;
+        font-weight: bold;
+        line-height: 1.1em;
       }
-    }
 
-    .hero-image {
-      top: 3em;
+      p {
+        width: 85%;
+      }
     }
 
     .scroll {

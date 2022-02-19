@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { BiMoon } from "react-icons/bi";
+import { BsSun } from "react-icons/bs";
 
 const Container = styled.label`
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 64px;
   height: 36px;
 
   input {
@@ -13,16 +15,29 @@ const Container = styled.label`
     height: 0;
 
     &:checked + span::before {
-      transform: translateX(22px);
+      transform: translateX(26px);
       background-color: ${({ theme }) => theme.body};
     }
 
     &:checked + span {
       background-color: ${({ theme }) => theme.bgSecondary};
     }
+
+    &:checked + span {
+      .right {
+        visibility: hidden;
+      }
+      .left {
+        visibility: show;
+      }
+    }
   }
 
   span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 8px;
     position: absolute;
     top: 0;
     left: 0;
@@ -30,8 +45,13 @@ const Container = styled.label`
     bottom: 0;
     background-color: ${({ theme }) => theme.bgSecondary};
     border-radius: 24px;
-
     cursor: pointer;
+
+    .right,
+    .left {
+      color: ${({ theme }) => theme.body};
+      font-size: 18px;
+    }
 
     &::before {
       position: absolute;
@@ -52,7 +72,10 @@ const Toggle = ({ toggleTheme }) => {
     <>
       <Container>
         <input type="checkbox" onClick={toggleTheme} />
-        <span></span>
+        <span>
+          <BiMoon className="left" />
+          <BsSun className="right" />
+        </span>
       </Container>
     </>
   );

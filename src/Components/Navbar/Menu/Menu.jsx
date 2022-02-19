@@ -4,6 +4,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaCodepen } from "react-icons/fa";
 import { AiFillLinkedin } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
+import { Link as LinkS } from "react-scroll";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.background};
@@ -32,31 +33,33 @@ const Grid = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
   margin-top: 64px;
+`;
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: ${({ theme }) => theme.body};
-    text-decoration: none;
-    padding: 16px 24px;
-    border-radius: 4px;
+const LinkScroll = styled(LinkS)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.body};
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 4px;
+  cursor: pointer;
 
-    &:hover,
-    &:focus {
-      background-color: ${({ theme }) => theme.primary};
-      color: ${({ theme }) => theme.linkHover};
-    }
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.linkHover};
   }
 `;
 
-const Button = styled.a`
+const Button = styled(LinkS)`
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   background-color: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.linkHover};
+  cursor: pointer;
   border-radius: 8px;
   padding: 16px 24px;
   width: 100%;
@@ -133,18 +136,54 @@ const Menu = ({ show, toggleMenu }) => {
     <Container className={show && "show-menu"}>
       <IoMdClose className="menu-close" onClick={toggleMenu} size={40} />
       <Grid>
-        <a className="body-large mt-s" href="#">
+        <LinkScroll
+          to="home"
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact={true}
+          onClick={toggleMenu}
+          offset={-70}
+          className="body-large mt-s"
+        >
           Home
-        </a>
-        <a className="body-large mt-s" href="#">
+        </LinkScroll>
+        <LinkScroll
+          to="about"
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact={true}
+          onClick={toggleMenu}
+          offset={-70}
+          className="body-large mt-s"
+        >
           About
-        </a>
-        <a className="body-large mt-s" href="#">
+        </LinkScroll>
+        <LinkScroll
+          to="portfolio"
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact={true}
+          onClick={toggleMenu}
+          offset={-70}
+          className="body-large mt-s"
+        >
           Projects
-        </a>
+        </LinkScroll>
       </Grid>
       <LinkItems>
-        <Button className="body-large " href="#">
+        <Button
+          to="contact"
+          smooth={true}
+          duration={500}
+          spy={true}
+          exact={true}
+          onClick={toggleMenu}
+          offset={-70}
+          className="body-large "
+        >
           Get In Touch
         </Button>
         <Socials className="mt-m">

@@ -1,4 +1,5 @@
 import React from "react";
+import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { Data } from "./Data";
 import { HiMail } from "react-icons/hi";
@@ -191,8 +192,29 @@ const Links = styled.div`
 `;
 
 const Contact = ({ ...Data }) => {
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_fxpnul9",
+        "template_iyva747",
+        e.target,
+        "user_8lqOgYTwq9QuJL76cFuWh"
+      )
+      .then(
+        result => {
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
-    <Container>
+    <Container id="contact" onSubmit={sendEmail}>
       <h2 className="h2">Get In Touch</h2>
       <div className="grid">
         <div className="contact-info">
@@ -219,11 +241,11 @@ const Contact = ({ ...Data }) => {
         <form action="#">
           <div className="field">
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" required />
           </div>
           <div className="field">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" required />
           </div>
           <div className="field">
             <div className="flex">
@@ -233,7 +255,9 @@ const Contact = ({ ...Data }) => {
             <input type="text" name="subject" id="subject" />
           </div>
           <div className="field">
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message" required>
+              Message
+            </label>
             <textarea name="message" id="message" />
           </div>
           <div className="btn-container">

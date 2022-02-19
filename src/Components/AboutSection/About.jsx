@@ -166,7 +166,7 @@ const Container = styled.section`
 
 const About = () => {
   return (
-    <Container>
+    <Container id="about">
       <h3 className="h2 mb-s">About Me</h3>
       <div className="grid">
         <img
@@ -179,18 +179,24 @@ const About = () => {
             <span className="top body-large">
               <span>&#60;</span>Hello<span>&#62;</span>
             </span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            modi provident, repellat officia doloribus placeat quis cumque
-            laboriosam beatae atque repellat officia doloribus placeat quis
-            cumque laboriosam beatae atque at maiores quia illo.
+            Hi! I'm Jaheim Brown a highly enthusiastic Front End Developer based
+            in Jamaica. I design and develop websites and web applications with
+            a focus on responsive design. In my spare time, I tend to dive into
+            other areas of interest such as mobile, game development and diving
+            deeper into backend development to one day eventually become a full
+            stack developer.
             <span className="bottom body-large">
               <span>&#60;/</span>Hello<span>&#62;</span>
             </span>
           </p>
           <div className="links mt-l">
-            <button href="#" className="outline-btn">
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1B1wXmKfJWndJjuLrx6lIjEb26AjriA02/view"
+              className="outline-btn"
+            >
               Download Resume
-            </button>
+            </a>
             <img src={Icons} />
           </div>
         </div>

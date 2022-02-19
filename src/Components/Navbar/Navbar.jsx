@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Link as LinkS } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { HiMail } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
@@ -13,18 +14,22 @@ import Toggle from "../Toggle";
 const Container = styled.header`
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  max-width: 1200px;
-  height: 72px;
-  padding: 0 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: ${({ theme }) => theme.background};
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  height: 64px;
+  background: ${({ theme }) => theme.nav.bg};
+  backdrop-filter: blur(20px);
   z-index: 10;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.75rem;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   ul {
     display: none;
@@ -58,7 +63,11 @@ const Container = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 3em;
+
+      & > * {
+        text-transform: uppercase;
+      }
     }
   }
 
@@ -87,13 +96,7 @@ const Flex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-gap: 16px;
-
-  img {
-    width: 44px;
-    height: 44px;
-    cursor: pointer;
-  }
+  grid-gap: 1em;
 
   a {
     text-decoration: none;
@@ -104,6 +107,10 @@ const Flex = styled.div`
       display: none;
     }
   }
+`;
+
+export const LinkScroll = styled(LinkS)`
+  cursor: pointer;
 `;
 
 const SocialContainer = styled.div`
@@ -126,15 +133,15 @@ const SocialContainer = styled.div`
     }
 
     &:nth-child(2) {
-      border-left: 3px solid ${({ theme }) => theme.border};
-      border-right: 3px solid ${({ theme }) => theme.border};
+      border-left: 2px solid ${({ theme }) => theme.border};
+      border-right: 2px solid ${({ theme }) => theme.border};
       &:hover,
       &:focus {
         color: #be2a2a;
       }
     }
     &:nth-child(3) {
-      border-right: 3px solid ${({ theme }) => theme.border};
+      border-right: 2px solid ${({ theme }) => theme.border};
       &:hover,
       &:focus {
         color: #bcdb0d;
@@ -164,48 +171,94 @@ const Navbar = ({ toggleTheme }) => {
   return (
     <>
       <Container>
-        <div className="nav-items">
-          <a href="#" className="Logo h5">
-            &lt; <span>/</span>JB&gt;
-          </a>
-          <ul>
-            <li>
-              <a href="#Home">Home</a>
-            </li>
-            <li>
-              <a href="#About">About</a>
-            </li>
-            <li>
-              <a href="#Software Creations">Projects</a>
-            </li>
-          </ul>
+        <div className="content">
+          <div className="nav-items">
+            <LinkScroll
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={true}
+              offset={-70}
+              className="Logo h5"
+            >
+              &lt; <span>/</span>JB&gt;
+            </LinkScroll>
+            <ul>
+              <li>
+                <LinkScroll
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={true}
+                  offset={-70}
+                >
+                  Home
+                </LinkScroll>
+              </li>
+              <li>
+                <LinkScroll
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={true}
+                  offset={-70}
+                >
+                  About
+                </LinkScroll>
+              </li>
+              <li>
+                <LinkScroll
+                  to="portfolio"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact={true}
+                  offset={-70}
+                >
+                  Projects
+                </LinkScroll>
+              </li>
+            </ul>
+          </div>
+          <Flex>
+            <Toggle toggleTheme={toggleTheme} />
+            <SocialContainer>
+              <a href="#">
+                <HiMail />
+              </a>
+              <a href="#">
+                <AiFillGithub />
+              </a>
+              <a href="#">
+                <FaCodepen />
+              </a>
+              <a href="#">
+                <AiFillLinkedin />
+              </a>
+            </SocialContainer>
+            <HiMenuAlt3
+              className="Menu"
+              size={40}
+              style={{ cursor: "pointer" }}
+              onClick={toggleMenu}
+            />
+            <LinkScroll
+              to="contact"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact={true}
+              offset={-70}
+              href="#"
+              className="nav-btn"
+            >
+              Contact
+            </LinkScroll>
+          </Flex>
         </div>
-        <Flex>
-          <Toggle toggleTheme={toggleTheme} />
-          <SocialContainer>
-            <a href="#">
-              <HiMail />
-            </a>
-            <a href="#">
-              <AiFillGithub />
-            </a>
-            <a href="#">
-              <FaCodepen />
-            </a>
-            <a href="#">
-              <AiFillLinkedin />
-            </a>
-          </SocialContainer>
-          <HiMenuAlt3
-            className="Menu"
-            size={40}
-            style={{ cursor: "pointer" }}
-            onClick={toggleMenu}
-          />
-          <button href="#" className="nav-btn   ">
-            Contact
-          </button>
-        </Flex>
       </Container>
       <MobileMenu show={show} toggleMenu={toggleMenu} />
     </>

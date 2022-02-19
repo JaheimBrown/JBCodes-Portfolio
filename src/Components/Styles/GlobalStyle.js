@@ -110,7 +110,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.btnText};
     border: 1px solid ${({ theme }) => theme.border};
-    padding: 16px 24px;
+    padding: 16px 20px;
     min-width: 100px;
     border-radius: 4px;
     box-shadow: 0px 1px 3px 1px #00000026;
@@ -138,7 +138,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.body};
     border: 1px solid ${({ theme }) => theme.border};
-    padding: 16px 24px;
+    padding: 16px 20px;
     min-width: 100px;
     border-radius: 4px;
     font-family: 'Poppins', sans-serif;
@@ -248,6 +248,7 @@ export const GlobalStyles = createGlobalStyle`
     box-shadow: 0px 1px 3px 1px #00000026;
     box-shadow: 0px 1px 2px 0px #0000004d;
     font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 
@@ -255,7 +256,7 @@ export const GlobalStyles = createGlobalStyle`
 
     .icon2{display: none;}
 
-    &:hover, &:focus{
+    &:hover{
       background-color: #fff;
       color: #000;
       .icon{display: none;}
