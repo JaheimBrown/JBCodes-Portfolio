@@ -7,7 +7,6 @@ const Container = styled.div`
   color: ${({ theme }) => theme.body};
   border: 1px solid ${({ theme }) => theme.border};
   width: 100%;
-
   border-radius: 4px;
   margin-bottom: 3rem;
   box-shadow: 0px 1px 3px 1px #00000026;
@@ -17,15 +16,16 @@ const Container = styled.div`
     display: block;
     width: 100%;
     height: 280px;
-    object-fit: cover;
     border-radius: 4px 4px 0 0;
+    object-fit: cover;
   }
 
   .content {
     padding: 1rem;
 
     p {
-      text-align: justify;
+      text-align: left;
+      line-height: 1.7em;
     }
 
     ul {
@@ -61,21 +61,29 @@ const Container = styled.div`
     img {
       position: relative;
       grid-area: img;
-      width: 500px;
-      height: 400px;
-      left: 4em;
+      width: 800px;
+      height: 500px;
+      left: 2em;
+      object-fit: cover;
     }
 
     .content {
       grid-area: desc;
-      min-width: 450px;
+      min-width: 480px;
     }
   }
 
   @media screen and (min-width: 1024px) {
     gap: 0;
     img {
-      left: 6em;
+      left: 5em;
+      width: 760px;
+      height: 500px;
+      object-fit: contain;
+    }
+
+    .content {
+      min-width: 500px;
     }
   }
 `;
@@ -96,14 +104,14 @@ const Card = ({ item }) => {
           ))}
         </ul>
         <div className="btn-container">
-          <button href="#" className="primary-btn">
+          <a target="_blank" href={links.live} className="primary-btn">
             <AiOutlineLink className="body-large" />
             View Live
-          </button>
-          <button href="#" className="outline-btn">
+          </a>
+          <a target="_blank" href={links.code} className="outline-btn">
             <AiOutlineEye className="body-large" />
             Source Code
-          </button>
+          </a>
         </div>
       </div>
     </Container>
