@@ -224,16 +224,19 @@ const Contact = ({ ...Data }) => {
             voluptatum maxime in perspiciatis quae ab quod.
           </p>
           <Links className="links">
-            <a href="#">
+            <a href="mailto:jaheimcbrown@gmail.com" target="_blank">
               <HiMail />
             </a>
-            <a href="#">
+            <a href="https://github.com/KxngJ" target="_blank">
               <AiFillGithub />
             </a>
-            <a href="#">
+            <a href="https://codepen.io/kxngj" target="_blank">
               <FaCodepen />
             </a>
-            <a href="#">
+            <a
+              href="https://www.linkedin.com/in/jaheim-brown-a92076209"
+              target="_blank"
+            >
               <AiFillLinkedin />
             </a>
           </Links>
