@@ -25,6 +25,7 @@ const Container = styled.section`
       top: -12px;
       left: 50%;
       transform: translateX(-50%);
+      width: 100%;
     }
   }
 
@@ -137,7 +138,7 @@ const Container = styled.section`
     }
 
     .about-image {
-      width: 18.5em;
+      width: 19em;
       grid-row: 1;
       grid-column: 1/3;
     }
@@ -155,8 +156,6 @@ const Container = styled.section`
     }
 
     .bio {
-      /* border: 1px solid red; */
-
       p {
         padding-inline: 2em;
       }
@@ -170,11 +169,12 @@ const About = () => {
       <h3 className="h2 mb-s">About Me</h3>
       <div className="grid">
         <img
+          data-aos="fade-right"
           src={aboutImg}
-          alt="Image of Jaheim Brown"
           className="about-image"
+          alt="Image of Jaheim Brown"
         />
-        <div className="bio">
+        <div className="bio" data-aos="fade-up">
           <p className="mt-l">
             <span className="top body-large">
               <span>&#60;</span>Hello<span>&#62;</span>
@@ -200,7 +200,7 @@ const About = () => {
             <img src={Icons} />
           </div>
         </div>
-        <div className="technologies mt-l">
+        <div className="technologies mt-l" data-aos="fade-up">
           <span className="top body-large">
             <span>&#60;</span>Technologies<span>&#62;</span>
           </span>

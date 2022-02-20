@@ -14,6 +14,20 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  ::-webkit-scrollbar{
+    width: .8em;
+  }
+
+  ::-webkit-scrollbar-track{
+    background: ${({ theme }) => theme.background};
+    margin-block: .5em;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: ${({ theme }) => theme.primary};
+    border-radius: 100vw;
+  }
+
   a {
     text-decoration: none;
   }

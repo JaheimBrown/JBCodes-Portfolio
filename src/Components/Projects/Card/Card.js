@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AiOutlineLink, AiOutlineEye } from "react-icons/ai";
 
@@ -90,10 +90,28 @@ const Container = styled.div`
 
 const Card = ({ item }) => {
   const { name, img, description, links, technologies } = item;
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  const handleResize = () => {
+    window.innerWidth > 800 ? setIsLargeScreen(true) : setIsLargeScreen(false);
+  };
+
+  const getScreenSize = size => {
+    size > 800 ? setIsLargeScreen(true) : setIsLargeScreen(false);
+  };
+
+  useEffect(() => {
+    let size = window.innerWidth;
+    getScreenSize(size);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <Container>
-      <img src={img} alt={name} />
-      <div className="content">
+    <Container data-aos={!isLargeScreen ? "fade-up" : ""}>
+      <img src={img} alt={name} data-aos={isLargeScreen ? "fade-left" : ""} />
+      <div className="content" data-aos={isLargeScreen ? "fade-up" : ""}>
         <h4 className="h4 mt-s mb-s">{name}</h4>
         <p>{description}</p>
         <ul className="mt-s mb-s">

@@ -87,6 +87,7 @@ const ScrollBtn = styled(LinkS)`
 const Wrapper = styled.section`
   position: relative;
   height: 100vh;
+  max-height: 650px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 3em 1em 0 1em;
@@ -99,19 +100,27 @@ const Wrapper = styled.section`
     margin-top: 5em;
 
     h2 {
-      font-size: 2.986rem;
+      font-size: 2.5rem;
       color: ${({ theme }) => theme.title};
       line-height: 1.1em;
+      margin-bottom: 1em;
     }
 
     .leading {
       color: ${({ theme }) => theme.body};
+      margin-bottom: 2em;
     }
 
     .btn-container {
       display: flex;
       align-items: center;
       gap: 1em;
+
+      @media (max-width: 380px) {
+        a {
+          padding: 12px 14px;
+        }
+      }
     }
   }
 
@@ -121,7 +130,7 @@ const Wrapper = styled.section`
     left: 0;
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 600px) {
     padding-inline: 3em;
     padding-top: 6em;
 
@@ -157,13 +166,13 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 860px) {
     .container {
       transform: none;
       -webkit-tranform: none;
       left: auto;
-      top: 8em;
-      right: -4em;
+      top: 6em;
+      right: -2em;
       width: 50%;
     }
 
@@ -173,11 +182,13 @@ const Wrapper = styled.section`
 
       h2 {
         font-size: 3.583rem;
+        margin-bottom: 0.5em;
       }
 
       h2,
       p {
         text-align: left;
+        width: 90%;
       }
     }
 
@@ -190,14 +201,14 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1120px) {
     .container {
       top: 4.5em;
       right: -5em;
     }
     .info {
-      margin-top: 4em;
-      width: 60% !important;
+      margin-top: 3.5em;
+      width: 65% !important;
 
       h2 {
         font-size: 4.3rem;
@@ -212,6 +223,7 @@ const Wrapper = styled.section`
 
     .scroll {
       left: 1.5em;
+      bottom: -1em;
     }
   }
 `;
