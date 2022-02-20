@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // ASSETS
-import aboutImg from "../../Assets/Images/image2.png";
+import aboutImg from "../../Assets/Images/image1.png";
 import Icons from "../../Assets/Icons/Icons.svg";
 
 const Container = styled.section`

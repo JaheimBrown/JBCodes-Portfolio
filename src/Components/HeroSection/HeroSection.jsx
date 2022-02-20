@@ -87,7 +87,7 @@ const ScrollBtn = styled(LinkS)`
 const Wrapper = styled.section`
   position: relative;
   height: 100vh;
-  max-height: 650px;
+  max-height: 660px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 3em 1em 0 1em;
@@ -223,7 +223,7 @@ const Wrapper = styled.section`
 
     .scroll {
       left: 1.5em;
-      bottom: -1em;
+      bottom: -0.8em;
     }
   }
 `;
