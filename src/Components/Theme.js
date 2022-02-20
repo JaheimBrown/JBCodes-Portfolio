@@ -16,6 +16,8 @@ export const lightMode = {
   linkHover: "#fff",
   textOnImg: "#fff",
   borderOnImg: "rgba(189, 189, 189, 0.6)",
+  formMessageSuccess: "#F1C62C",
+  formMessageFail: "#F53E3E",
 };
 
 export const darkMode = {
@@ -35,4 +37,6 @@ export const darkMode = {
   linkHover: "#fff",
   textOnImg: "#fff",
   borderOnImg: "rgba(189, 189, 189, 0.6)",
+  formMessageSuccess: "#BF420C",
+  formMessageFail: "#BF0C0C",
 };

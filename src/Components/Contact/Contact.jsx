@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { Data } from "./Data";
@@ -141,6 +141,31 @@ const Container = styled.section`
       padding: 2em 1em;
     }
   }
+
+  /* FORM MESSAGE */
+  .form-message {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.formMessageSuccess};
+    color: ${({ theme }) => theme.body};
+    font-size: 0.875rem;
+    min-width: 100px;
+    padding: 1em 1.5em;
+    border-radius: 12px;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 1px 3px 1px #00000026;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    transition: 0.3s ease-in;
+    user-select: none;
+  }
+
+  .show {
+    bottom: 30px;
+  }
 `;
 
 const Links = styled.div`
@@ -192,26 +217,40 @@ const Links = styled.div`
 `;
 
 const Contact = ({ ...Data }) => {
+  const [message, setMessage] = useState("");
+  const [show, setShow] = useState(false);
+
   const sendEmail = e => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_fxpnul9",
+        "service_t2rhy24",
         "template_iyva747",
         e.target,
         "user_8lqOgYTwq9QuJL76cFuWh"
       )
       .then(
         result => {
-          console.log(result.text);
+          setMessage("Email Sent successfully");
+          setShow(true);
         },
         error => {
-          console.log(error.text);
+          setMessage("Someting went wrong!");
+          setShow(true);
         }
       );
     e.target.reset();
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (show === true) {
+        setShow(false);
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [show]);
 
   return (
     <Container id="contact" onSubmit={sendEmail}>
@@ -269,6 +308,9 @@ const Contact = ({ ...Data }) => {
             </button>
           </div>
         </form>
+      </div>
+      <div className={show ? "form-message show" : "form-message"}>
+        <p>{message}</p>
       </div>
     </Container>
   );
