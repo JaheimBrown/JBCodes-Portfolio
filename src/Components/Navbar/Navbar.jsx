@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -165,7 +165,11 @@ const Navbar = ({ toggleTheme }) => {
 
   // FUNCTIONS
   const toggleMenu = () => {
-    show === false ? setShow(true) : setShow(false);
+    if (show) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
   };
 
   return (
