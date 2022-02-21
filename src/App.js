@@ -20,13 +20,31 @@ import Footer from "./Components/Footer";
 
 function App() {
   // STATES
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    if (localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    } else {
+      return "light";
+    }
+  });
+
   const [toggleAni, setToggleAni] = useState(false);
   const Data = toggleAni ? animationData2 : animationData;
 
+  const setLocalTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+      setToggleAni(true);
+      localStorage.setItem("theme", "dark");
+    } else if (theme === "dark") {
+      setTheme("light");
+      setToggleAni(false);
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   const toggleTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-    theme === "light" ? setToggleAni(true) : setToggleAni(false);
+    setLocalTheme();
   };
 
   // Initializing AOS
