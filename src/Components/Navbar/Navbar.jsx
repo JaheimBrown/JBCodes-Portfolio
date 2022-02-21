@@ -18,7 +18,7 @@ const Container = styled.header`
   height: 64px;
   background: ${({ theme }) => theme.nav.bg};
   backdrop-filter: blur(20px);
-  z-index: 10;
+  z-index: 999;
 
   .content {
     display: flex;
@@ -165,6 +165,7 @@ const Navbar = ({ toggleTheme }) => {
 
   // FUNCTIONS
   const toggleMenu = () => {
+    console.log("Menu clicked!");
     if (show) {
       setShow(false);
     } else {
@@ -263,7 +264,7 @@ const Navbar = ({ toggleTheme }) => {
               className="Menu"
               size={40}
               style={{ cursor: "pointer" }}
-              onClick={toggleMenu}
+              onClick={() => toggleMenu()}
             />
             <LinkScroll
               to="contact"
