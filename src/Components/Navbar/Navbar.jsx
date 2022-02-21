@@ -226,17 +226,30 @@ const Navbar = ({ toggleTheme }) => {
           <Flex>
             <Toggle toggleTheme={toggleTheme} />
             <SocialContainer>
-              <a href="mailto:jaheimcbrown@gmail.com" target="_blank">
+              <a
+                href="mailto:jaheimcbrown@gmail.com"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <HiMail />
               </a>
-              <a href="https://github.com/KxngJ" target="_blank">
+              <a
+                href="https://github.com/KxngJ"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <AiFillGithub />
               </a>
-              <a href="https://codepen.io/kxngj" target="_blank">
+              <a
+                href="https://codepen.io/kxngj"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <FaCodepen />
               </a>
               <a
                 href="https://www.linkedin.com/in/jaheim-brown-a92076209"
+                rel="noreferrer"
                 target="_blank"
               >
                 <AiFillLinkedin />

@@ -23,7 +23,7 @@ const Container = styled.div`
   .menu-close {
     position: absolute;
     top: 16px;
-    right: 16px;
+    right: 32px;
     cursor: pointer;
   }
 `;
