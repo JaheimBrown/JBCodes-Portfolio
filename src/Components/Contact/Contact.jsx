@@ -219,6 +219,7 @@ const Links = styled.div`
 const Contact = ({ ...Data }) => {
   const [message, setMessage] = useState("");
   const [show, setShow] = useState(false);
+  const [error, setError] = useState(false);
 
   const sendEmail = e => {
     e.preventDefault();

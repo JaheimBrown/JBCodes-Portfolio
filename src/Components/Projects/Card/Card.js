@@ -122,11 +122,21 @@ const Card = ({ item }) => {
           ))}
         </ul>
         <div className="btn-container">
-          <a target="_blank" href={links.live} className="primary-btn">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={links.live}
+            className="primary-btn"
+          >
             <AiOutlineLink className="body-large" />
             View Live
           </a>
-          <a target="_blank" href={links.code} className="outline-btn">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={links.code}
+            className="outline-btn"
+          >
             <AiOutlineEye className="body-large" />
             Source Code
           </a>

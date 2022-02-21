@@ -35,8 +35,6 @@ const Container = styled.section`
   }
 `;
 
-const Header = styled.h2``;
-
 // PROJECT DATA
 
 const Projects = () => {
