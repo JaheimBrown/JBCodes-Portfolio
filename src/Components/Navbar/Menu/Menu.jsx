@@ -133,7 +133,7 @@ const LinkItems = styled.div`
 
 const Menu = ({ show, toggleMenu }) => {
   return (
-    <Container className={show && "show-menu"}>
+    <Container className={show ? "show-menu" : ""}>
       <IoMdClose className="menu-close" onClick={toggleMenu} size={40} />
       <Grid>
         <LinkScroll
