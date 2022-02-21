@@ -192,7 +192,7 @@ const About = () => {
           <div className="links mt-l">
             <a
               target="_blank"
-              href="https://drive.google.com/file/d/1B1wXmKfJWndJjuLrx6lIjEb26AjriA02/view"
+              href="https://drive.google.com/file/d/1pe-DiqdUmcV5tPm0KEz2XHcdAWXq74xb/view?usp=sharing"
               className="outline-btn"
             >
               Download Resume
