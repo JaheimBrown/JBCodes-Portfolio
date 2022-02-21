@@ -67,11 +67,11 @@ const Container = styled.label`
   }
 `;
 
-const Toggle = ({ toggleTheme }) => {
+const Toggle = ({ setLocalTheme }) => {
   return (
     <>
       <Container>
-        <input type="checkbox" onClick={toggleTheme} />
+        <input type="checkbox" onClick={setLocalTheme} />
         <span>
           <BiMoon className="left" />
           <BsSun className="right" />

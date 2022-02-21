@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -18,7 +17,7 @@ const Container = styled.header`
   height: 64px;
   background: ${({ theme }) => theme.nav.bg};
   backdrop-filter: blur(20px);
-  z-index: 999;
+  z-index: 998;
 
   .content {
     display: flex;
@@ -160,19 +159,7 @@ const SocialContainer = styled.div`
   }
 `;
 
-const Navbar = ({ toggleTheme }) => {
-  const [show, setShow] = useState(false);
-
-  // FUNCTIONS
-  const toggleMenu = () => {
-    console.log("Menu clicked!");
-    if (show) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-  };
-
+const Navbar = ({ menu, openMenu, closeMenu, setLocalTheme }) => {
   return (
     <>
       <Container>
@@ -229,7 +216,7 @@ const Navbar = ({ toggleTheme }) => {
             </ul>
           </div>
           <Flex>
-            <Toggle toggleTheme={toggleTheme} />
+            <Toggle setLocalTheme={setLocalTheme} />
             <SocialContainer>
               <a
                 href="mailto:jaheimcbrown@gmail.com"
@@ -264,7 +251,7 @@ const Navbar = ({ toggleTheme }) => {
               className="Menu"
               size={40}
               style={{ cursor: "pointer" }}
-              onClick={() => toggleMenu()}
+              onClick={openMenu}
             />
             <LinkScroll
               to="contact"
@@ -281,7 +268,7 @@ const Navbar = ({ toggleTheme }) => {
           </Flex>
         </div>
       </Container>
-      <MobileMenu show={show} toggleMenu={toggleMenu} />
+      <MobileMenu menu={menu} closeMenu={closeMenu} />
     </>
   );
 };

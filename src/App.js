@@ -27,24 +27,29 @@ function App() {
       return "light";
     }
   });
-
+  const [menu, setMenu] = useState(false);
   const [toggleAni, setToggleAni] = useState(false);
   const Data = toggleAni ? animationData2 : animationData;
+
+  const openMenu = () => {
+    setMenu(true);
+  };
+
+  const closeMenu = () => {
+    setMenu(false);
+  };
 
   const setLocalTheme = () => {
     if (theme === "light") {
       setTheme("dark");
       setToggleAni(true);
       localStorage.setItem("theme", "dark");
-    } else if (theme === "dark") {
+    } else {
       setTheme("light");
       setToggleAni(false);
       localStorage.setItem("theme", "light");
     }
-  };
-
-  const toggleTheme = () => {
-    setLocalTheme();
+    console.log(theme);
   };
 
   // Initializing AOS
@@ -58,7 +63,12 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightMode : darkMode}>
       <GlobalStyles />
       <>
-        <Navbar toggleTheme={toggleTheme} />
+        <Navbar
+          openMenu={openMenu}
+          closeMenu={closeMenu}
+          menu={menu}
+          setLocalTheme={setLocalTheme}
+        />
         <HeroSection animationData={Data} />
         <About />
         <Projects />

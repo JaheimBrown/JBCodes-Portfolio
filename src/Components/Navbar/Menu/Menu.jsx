@@ -18,7 +18,7 @@ const Container = styled.div`
   height: 100vh;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 10;
+  z-index: 999;
 
   .menu-close {
     position: absolute;
@@ -131,10 +131,10 @@ const LinkItems = styled.div`
   width: 100%;
 `;
 
-const Menu = ({ show, toggleMenu }) => {
+const Menu = ({ menu, closeMenu }) => {
   return (
-    <Container className={show ? "show-menu" : ""}>
-      <IoMdClose className="menu-close" onClick={toggleMenu} size={40} />
+    <Container className={menu && "open"}>
+      <IoMdClose className="menu-close" onClick={closeMenu} size={40} />
       <Grid>
         <LinkScroll
           to="home"
@@ -142,7 +142,7 @@ const Menu = ({ show, toggleMenu }) => {
           duration={500}
           spy={true}
           exact={true}
-          onClick={toggleMenu}
+          onClick={closeMenu}
           offset={-70}
           className="body-large mt-s"
         >
@@ -154,7 +154,7 @@ const Menu = ({ show, toggleMenu }) => {
           duration={500}
           spy={true}
           exact={true}
-          onClick={toggleMenu}
+          onClick={closeMenu}
           offset={-70}
           className="body-large mt-s"
         >
@@ -166,7 +166,7 @@ const Menu = ({ show, toggleMenu }) => {
           duration={500}
           spy={true}
           exact={true}
-          onClick={toggleMenu}
+          onClick={closeMenu}
           offset={-70}
           className="body-large mt-s"
         >
@@ -180,7 +180,7 @@ const Menu = ({ show, toggleMenu }) => {
           duration={500}
           spy={true}
           exact={true}
-          onClick={toggleMenu}
+          onClick={closeMenu}
           offset={-70}
           className="body-large "
         >

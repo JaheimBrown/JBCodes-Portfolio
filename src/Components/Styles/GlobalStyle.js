@@ -272,8 +272,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   /* ACTIVE CLASSES */
-  .show-menu{
-    transform: translateY(0%);
+  .open{
+    transform: translateY(0%) !important;
   }
   .scoll-cta{
     background-color: crimson;
