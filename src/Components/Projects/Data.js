@@ -6,10 +6,23 @@ import google from "../../Assets/Images/projects/google-clone.png";
 import slider from "../../Assets/Images/projects/react-slider.png";
 import todo from "../../Assets/Images/projects/todo-list.png";
 import cryptoverse from "../../Assets/Images/projects/cryptoverse.png";
+import gpt3 from "../../Assets/Images/projects/gpt3-website.png";
 
 const projects = [
   {
     id: 0,
+    name: "Gpt3 Website",
+    img: `${gpt3}`,
+    description:
+      "GPT3 is a modern website Built with ReactJs and Styled components, with the main focus on responsive design with flex and grid systems.",
+    technologies: ["React.js", "Styled-Components"],
+    links: {
+      live: "https://endearing-tiramisu-80cf9c.netlify.app/",
+      code: "https://github.com/KxngJ/GPT-3",
+    },
+  },
+  {
+    id: 1,
     name: "Crytoverse",
     img: `${cryptoverse}`,
     description:
@@ -21,7 +34,7 @@ const projects = [
     },
   },
   {
-    id: 1,
+    id: 2,
     name: "Portfolio Website V1",
     img: `${portfoliov1}`,
     description:
@@ -33,7 +46,7 @@ const projects = [
     },
   },
   {
-    id: 2,
+    id: 3,
     name: "Colour Generator",
     img: `${colorGenerator}`,
     description:
@@ -45,7 +58,7 @@ const projects = [
     },
   },
   {
-    id: 3,
+    id: 4,
     name: "Weather Forecast",
     img: `${weather}`,
     description:
@@ -57,7 +70,7 @@ const projects = [
     },
   },
   {
-    id: 4,
+    id: 5,
     name: "Google Homepage Clone",
     img: `${google}`,
     description:
@@ -69,7 +82,7 @@ const projects = [
     },
   },
   {
-    id: 5,
+    id: 6,
     name: "Form Validation",
     img: `${form}`,
     description:
@@ -81,7 +94,7 @@ const projects = [
     },
   },
   {
-    id: 6,
+    id: 7,
     name: "React Slider",
     img: `${slider}`,
     description:
@@ -93,7 +106,7 @@ const projects = [
     },
   },
   {
-    id: 7,
+    id: 8,
     name: "Todo List",
     img: `${todo}`,
     description:
