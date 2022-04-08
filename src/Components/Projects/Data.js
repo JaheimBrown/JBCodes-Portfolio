@@ -7,8 +7,34 @@ import slider from "../../Assets/Images/projects/react-slider.png";
 import todo from "../../Assets/Images/projects/todo-list.png";
 import cryptoverse from "../../Assets/Images/projects/cryptoverse.png";
 import gpt3 from "../../Assets/Images/projects/gpt3-website.png";
+import proNFtLanding from "../../Assets/Images/projects/proNft-landing.PNG";
+import PRONftMobile from "../../Assets/Images/projects/NFTPro-Mobile.png";
 
 const projects = [
+  {
+    id: 10,
+    name: "ProNft Mobile App",
+    img: `${PRONftMobile}`,
+    description:
+      "A  React Native Mobile application marketplace to buy, store and collect NFTS.",
+    technologies: ["React Native"],
+    links: {
+      code: "https://github.com/KxngJ/NFT-Mobile-App",
+      live: "https://expo.dev/@kxng/ProNft?serviceType=classic&distribution=expo-go",
+    },
+  },
+  {
+    id: 9,
+    name: "ProNft Landing Page",
+    img: `${proNFtLanding}`,
+    description:
+      "The landing page for my latest mobile project built with React Native.",
+    technologies: ["React", "Tailwind"],
+    links: {
+      live: "https://pro-nft.netlify.app/",
+      code: "https://github.com/KxngJ/ProNFT-Landing-Page",
+    },
+  },
   {
     id: 0,
     name: "Gpt3 Website",

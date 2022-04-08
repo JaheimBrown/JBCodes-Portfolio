@@ -218,13 +218,15 @@ const About = () => {
             <ul>
               <li className="body-small">React</li>
               <li className="body-small">React-Redux</li>
+              <li className="body-small">React Native</li>
               <li className="body-small">Styled-Components</li>
             </ul>
           </span>
 
           <span>
-            <p>Tools</p>
+            <p>Tools & Databases</p>
             <ul>
+              <li className="body-small">Firebase</li>
               <li className="body-small">GIT</li>
               <li className="body-small">NPM</li>
               <li className="body-small">VSCODE</li>
