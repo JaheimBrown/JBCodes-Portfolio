@@ -19,6 +19,16 @@ const Wrapper = styled.footer`
       flex-direction: column;
       gap: 0.5em;
     }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      padding: 2em 1em;
+      gap: 1em;
+
+      p {
+        font-size: 14px;
+      }
+    }
   }
 
   p {
