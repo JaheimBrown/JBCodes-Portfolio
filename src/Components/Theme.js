@@ -1,7 +1,7 @@
 // THEMES
 export const lightMode = {
   primary: "#2114BA",
-  background: "#FAFAFA",
+  background: "#FCFCFC",
   bgSecondary: "#F0F0F0",
   border: "rgba(189, 189, 189, 0.6)",
   nav: {
