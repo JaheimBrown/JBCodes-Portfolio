@@ -2,9 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Card from "./Card/Card";
 
-// DATA
-import projects from "./Data";
-
 // STYLES
 const Container = styled.section`
   padding: 44px 1rem 2rem;
@@ -37,11 +34,11 @@ const Container = styled.section`
 
 // PROJECT DATA
 
-const Projects = () => {
+const Projects = ({ projects }) => {
   return (
     <Container id="portfolio">
       <h2 className="h2 mb-s">My Work</h2>
-      {projects.map((item, index) => {
+      {projects.map(item => {
         return <Card key={item.id} item={item} />;
       })}
     </Container>
