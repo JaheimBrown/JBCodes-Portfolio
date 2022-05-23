@@ -45,7 +45,7 @@ const HeroSection = ({ animationData }) => {
           </ScrollBtn>
           <a
             target="_blank"
-            href="https://drive.google.com/file/d/10LVF0kMSL6ZA1zxESXQUe7aH5_A8ENtU/view"
+            href="https://drive.google.com/file/d/1MafW05Ofau4EXNTs6MwLxFEzz05319aN/view?usp=sharing"
             className="outline-btn"
           >
             Download Resume
